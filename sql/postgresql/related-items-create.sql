@@ -13,7 +13,9 @@
 -- http://www.fsf.org/copyleft/gpl.html
 
 create table content_rels (
-        rel_id         integer references acs_rels(rel_id)
+        rel_id         integer 
+                       constraint content_rels_acs_rel_id_fk
+                       references acs_rels(rel_id)
 );
 
 comment on table content_rels is 'content_rels is for higher level content relations supported by the related-items package.  This is a stupid table -- just there to feed the table gods.  DonB rescue me from this absurdity.';
