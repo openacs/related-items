@@ -57,7 +57,7 @@ end;' language 'plpgsql';
 select define_function_args('content_rel__new','rel_id,object_id_one,object_id_two,context_id,creation_user,creation_ip');
 
 
-create or replace function content_rel__delete(integer) 
+create or replace function content_rel__del(integer) 
 returns integer as '
 declare
   rel_id                 alias for $1;
@@ -67,7 +67,7 @@ begin
     return 0;
 end;' language 'plpgsql';
 
-select define_function_args('content_rel__delete','rel_id');
+select define_function_args('content_rel__del','rel_id');
 
 
 create or replace function content_rel__title(integer) 
